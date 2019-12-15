@@ -31,7 +31,7 @@ generaux
 RAX ; accumulateur, stockage du retour d’une fonction ou d’un appel systeme.
 RCX ; compteur de boucle (instruction loop).
 RDX ; registre de donnees, utilise lors des operations d’entrees/sorties et pour certains calculs longs (instructions div et mul).
-RBX ; decalage dans le segment des donnees point ´ e par le registre DS.
+RBX ; decalage dans le segment des donnees pointe par le registre DS.
 RSP ; Stack Pointer : Pointeur de la position actuelle de la pile.
 RBP ; Base Pointer : Pointeur du debut de la pile memoire du programme.
 RSI ; Source Index : pointeur ”source” pour les operations sur des chaınes de caracteres.

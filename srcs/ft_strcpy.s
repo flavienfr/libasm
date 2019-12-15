@@ -1,26 +1,28 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_strlen.s                                        :+:      :+:    :+:    #
+#    ft_strcpy.s                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: froussel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/15 16:10:07 by froussel          #+#    #+#              #
-#    Updated: 2019/12/15 16:10:15 by froussel         ###   ########.fr        #
+#    Created: 2019/12/15 17:18:46 by froussel          #+#    #+#              #
+#    Updated: 2019/12/15 17:18:47 by froussel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SECTION	.text
-			global	_ft_strlen
+section	.text
+			global	_ft_strcpy
 
-_ft_strlen:
-		mov		rax, 0				; i = 0
+_ft_strcpy:
+		i		dd, 0				; int i = 0
+		mov		rax, //dest
 		jmp		inc_til_end			; while (str[i])
-
+		
 inc_til_end:
-		cmp		BYTE [rdi + rax], 0	; 	if (str[i] == '\0')
-		je		return				; 		return (i)
-		inc		rax 				; 	i++
-		jmp		inc_til_end
+		cmp		BYTE [rax + rdi], 0	; if (str[i] == '\0')
+		je		return				; 	return (i)
+		mov		BYTE [rsi + rdi], BYTE [rax + rdi]
+		inc		rax 				; i++
+		jmp		inc_til_end			; while (str[i])
 return:
 		ret

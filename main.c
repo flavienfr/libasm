@@ -12,6 +12,7 @@
 #define FT_STRLEN(s) printf(C"FT_STRLEN: '%s' => len = %ld\n"S, s, ft_strlen(s))
 
 size_t	ft_strlen(const char *s);
+//char	*ft_strcpy(char * dst, const char * src);
 
 void	test_ft_strlen(void)
 {
@@ -34,10 +35,12 @@ void	test_ft_strlen(void)
 }
 void	test_ft_strcpy(void)
 {
+	//char dest[100];
+	//printf("%s\n", ft_strcpy(dest, "coucou"));
 	BIG_JUMP("ft_strcpy");
 }
 int main()
 {
 	test_ft_strlen();
-	test_ft_strcpy();
+	//test_ft_strcpy();
 }
