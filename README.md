@@ -18,14 +18,12 @@ MOV AL, 10       ; Transfer the value 10 to the AL register
 /*************************************************************
 mov x, y      	x ← y
 and x, y	x ← x and y
-or x, y	x ← x or y
+or x, y		x ← x or y
 xor x, y	x ← x xor y
 add x, y	x ← x + y
 sub x, y	x ← x – y
-inc x	x ← x + 1
-dec x	x ← x – 1
-syscall	Invoke an operating system routine
-db	A pseudo-instruction that declares bytes that will be in memory when the program runs
+inc x		x ← x + 1
+dec x		x ← x – 1
 /*************************************************************
 REGISTRE
 
