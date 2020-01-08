@@ -1,28 +1,16 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_strcpy.s                                        :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: froussel <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/15 17:18:46 by froussel          #+#    #+#              #
-#    Updated: 2019/12/15 17:18:47 by froussel         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 section	.text
 			global	_ft_strcpy
 
 _ft_strcpy:
-		i		dd, 0				; int i = 0
-		mov		rax, //dest
-		jmp		inc_til_end			; while (str[i])
-		
+		mov		rcx, 0
 inc_til_end:
-		cmp		BYTE [rax + rdi], 0	; if (str[i] == '\0')
-		je		return				; 	return (i)
-		mov		BYTE [rsi + rdi], BYTE [rax + rdi]
-		inc		rax 				; i++
-		jmp		inc_til_end			; while (str[i])
+		cmp		BYTE [rsi + rcx], 0
+		je		return
+		mov		dl, BYTE [rsi + rcx]
+		mov		BYTE [rdi + rcx], dl
+		inc		rcx		
+		jmp		inc_til_end
 return:
+		mov		BYTE [rdi + rcx], 0
+		mov		rax, rdi
 		ret

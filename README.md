@@ -1,4 +1,4 @@
-nasm -f elf hello.asm
+nasm -f elf64 hello.asm
 
 SYMBOL
 
@@ -37,8 +37,17 @@ RBP ; Base Pointer : Pointeur du debut de la pile memoire du programme.
 RSI ; Source Index : pointeur ”source” pour les operations sur des chaınes de caracteres.
 RDI ; Destination Index : pointeur ”destination” pour les operations sur des chaınes de caracteres.
 
-de controle
+Index Registers
+The 32-bit index registers, ESI and EDI, and their 16-bit rightmost portions. SI and DI, are used for indexed addressing and sometimes used in addition and subtraction. There are two sets of index pointers −
+Source Index (SI) − It is used as source index for string operations.
+Destination Index (DI) − It is used as destination index for string operations.
+/*************************************************************
 
+MOVSX moves a signed value into a register and sign-extends it with 1.
+
+syscall
+mov		rax, CODE	; Then RDI, RSI etc.. for params
+					; Add 0x2000000 to the syscall number, see table below
 
 LINKS
 
@@ -58,3 +67,6 @@ system calls:
 https://filippo.io/making-system-calls-from-assembly-in-mac-os-x/
 Code example:
 https://www.csee.umbc.edu/portal/help/nasm/sample_64.shtml#hello_64.asm
+Cheat sheet
+https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html
+
